@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-server
+  template:
+    metadata:
+      labels:
+        app: simple-server
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: simple-server
+        image: "raceonmouse/test:latest"
+        imagePullPolicy: Always
+        ports:
+        - name: rtmp
+          containerPort: 1935
+          protocol: TCP
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+

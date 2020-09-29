@@ -1,0 +1,13 @@
+controller:
+  ingressClass: haproxy
+  replicaCount: 1
+  service:
+    type: LoadBalancer
+  tcp:
+    1936: "test/simple-server:1935:::test/ingress-cert"
+  nodeSelector:
+    "kubernetes.io/os": linux
+defaultBackend:
+  nodeSelector:
+    "kubernetes.io/os": linux
+
