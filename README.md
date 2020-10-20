@@ -1,1 +1,5 @@
-# misc
+# Usage
+```
+npm install
+npm start
+```

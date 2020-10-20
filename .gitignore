@@ -1,0 +1,4 @@
+node_modules
+dist/
+sentry.properties
+.electron-symbols/
